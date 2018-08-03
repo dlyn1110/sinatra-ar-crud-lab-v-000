@@ -12,14 +12,14 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  get '/posts' do
-    @posts = Post.all
-    erb :index
-  end
-
   post '/posts' do #<--creates a post --
     @post = Post.create(name: params[:name], content: params[:content])
     redirect to '/posts'
+  end
+
+  get '/posts' do
+    @posts = Post.all
+    erb :index
   end
 
   get '/posts/:id' do
