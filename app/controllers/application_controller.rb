@@ -34,7 +34,7 @@ get '/posts/new' do
   end
 
   patch '/posts/:id' do
-    @post = Post.find_by id: params[:id]
+    @post = Post.find(params[:id])
     @post.update(name: params[:name], content: params[:content])
     @post.save
     erb :show
