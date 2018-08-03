@@ -131,7 +131,3 @@ get '/posts/new' do
 
 
 end
-
-
-
-
