@@ -12,7 +12,7 @@ get '/posts/new' do
     erb :new
   end
 
-  post '/posts' do
+  post '/posts' do#---create
     @post = Post.create(name: params[:name], content: params[:content])
     erb :index
   end
