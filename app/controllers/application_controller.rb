@@ -16,7 +16,7 @@ get '/posts/new' do
     Post.create(name: params[:name], content: params[:content])
     erb :index
   end
-
+#----Read
   get '/posts' do
     @posts = Post.all
     erb :index
@@ -26,7 +26,7 @@ get '/posts/new' do
     @post = Post.find_by id: params[:id]
     erb :show
   end
-
+#---Update
   get '/posts/:id/edit' do
     @post = Post.find_by id: params[:id]
 
@@ -39,7 +39,7 @@ get '/posts/new' do
     @post.save
     erb :show
   end
-
+# ----Delete
   delete '/posts/:id/delete' do
     @post = Post.find_by id: params[:id]
     @post.delete
