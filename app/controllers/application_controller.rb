@@ -27,7 +27,7 @@ get '/posts/new' do
     erb :show
   end
 #---Update
-  get '/posts/:id/edit' do
+  get '/posts/:id' do
     @post = Post.find_by id: params[:id]
 
     erb :edit
